@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BMI Calculator</title>
+  <meta charset="utf-8">
+  <meta name="description" content="BMI Calculator">
+  <meta name="author" content="Pawel Jamer">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>BMI Calculator</h1>
+    <h2></h2>
+    <p>Pawel Jamer<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:black;">
+  <hgroup>
+    <h2>Problem</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>In many developed countries human life is really fast. We don&#39;t have enought
+time for doing sport and eating healthy. Thus more and more people have
+problem with <strong>overweight</strong>.</p>
+
+<p>From the other hand, current fashion promotes extremely slim type of beauty
+which sometimes causes problem with <strong>underweight</strong> among the people that try 
+to follow the fashion.</p>
+
+<p>Both <strong>overweight</strong> and <strong>underweight</strong> can cause healthy problems like 
+diabetes, hypertension, heart attack etc. So it will be reasonable to inform
+people about weight irregularities.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:black;">
+  <hgroup>
+    <h2>Solution</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The simplest method of measureing body mass correctness is Body Mass Index 
+(BMI) which tie together height with weight by the following relation:</p>
+
+<p>\[BMI = \frac{weight}{height^2}\]</p>
+
+<p>Depends on BMI value you can be classified as a person with underweight, normal weight, overweight or obese.</p>
+
+<p>An example calculations for person with 80 kg weight and 1.8 m height is presented:</p>
+
+<pre><code class="r">80 -&gt; weight
+1.8 -&gt; height
+weight / height^2
+</code></pre>
+
+<pre><code>## [1] 24.69136
+</code></pre>
+
+<p>In this case, obtained BMI suggests normal weight.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:black;">
+  <hgroup>
+    <h2>Implementation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>BMI was implemented as Shiny application where weight information are presented
+in three ways:</p>
+
+<ul>
+<li>as BMI value,</li>
+<li>as descriptive information about body state</li>
+<li>as point on the BMI plot.</li>
+</ul>
+
+<p>An example of all this information are showed below:</p>
+
+<pre><code class="r">calculateBMI(1.8, 80)
+</code></pre>
+
+<pre><code>## [1] 24.69136
+</code></pre>
+
+<pre><code class="r">rateBMI(calculateBMI(1.8, 80))
+</code></pre>
+
+<pre><code>## [1] &quot;You have &lt;strong&gt;normal weight&lt;/strong&gt;. :)&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:black;">
+  <hgroup>
+    <h2>Conclusions</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>BMI value gives easy to use and interpret measure of body weight. Shiny gives
+visually attractive way for presenting BMI. Therefore we could hope that 
+people will be interested in the solution.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Problem'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Solution'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Implementation'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Conclusions'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
